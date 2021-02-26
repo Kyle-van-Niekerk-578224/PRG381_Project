@@ -1,5 +1,5 @@
 package BusinessLogicLayer;
-
+//Event
 abstract class Event{
 
     char[] type;        //This might be easier to work with using databases than converting strings
