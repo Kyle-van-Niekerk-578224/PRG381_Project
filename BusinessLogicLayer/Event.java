@@ -1,7 +1,7 @@
 package BusinessLogicLayer;
 //Event
-//DayTime
-import java.time.Month;
+//LocalTime works
+import java.time.Month; // <- VS Code says this is unused, but it seems to be required for ChronoUnit
 import java.time.temporal.ChronoUnit;
 import java.time.LocalDate; // import the LocalDate class, to ensure that there will be only one event per day
 
@@ -13,6 +13,7 @@ abstract class Event{
     int people;
     LocalDate today = LocalDate.now(); //The current date
     LocalDate eventDay; //This is the confirmed date of the event
+    //Client customer;  <-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
 
     //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
 
@@ -27,7 +28,7 @@ abstract class Event{
         //this will have the invoice multiply the  price of ordered adult meals by 0.85.
 
     public boolean checkPeople(int people){
-        if (people < 50)
+        if (people > 40)
         {
             return true;
         }
@@ -75,6 +76,17 @@ abstract class Event{
 	public void setEventDay(LocalDate eventDay) {
 		this.eventDay = eventDay;
 	}
+
+    //Will uncomment Client getter/setter when the client class is pushed to development
+/*
+    public Client getClient() {
+		return customer;
+	}
+
+	public void setClient(Client customer) {
+		this.customer = customer;
+	}
+*/
 }
 
 
