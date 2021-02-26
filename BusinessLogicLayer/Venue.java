@@ -1,5 +1,5 @@
 package BusinessLogicLayer;
-
+//Venue
 public class Venue{
 	private char[] name;
 	private char[] address;
