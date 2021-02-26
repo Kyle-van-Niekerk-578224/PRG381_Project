@@ -1,4 +1,9 @@
 package BusinessLogicLayer;
+//Event
+
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
+import java.time.LocalDate; // import the LocalDate class, to ensure that there will be only one event per day
 
 abstract class Event{
 
@@ -6,8 +11,13 @@ abstract class Event{
 	float price = 5;	//value needs to be decided upon
 	Venue eventVenue;
     int people;
+    LocalDate today = LocalDate.now(); //The current date
+    LocalDate eventDay; //This is the confirmed date of the event
 
-    public boolean checkBookingDay(int days){
+    //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
+
+    public boolean checkBookingDay(){
+        long days = ChronoUnit.DAYS.between(today, eventDay);
          if (days > 15)
          {
              return true;
@@ -56,6 +66,14 @@ abstract class Event{
 
     public void setPeople(int people) {
 		this.people = people;
+	}
+
+	public LocalDate getEventDay() {
+		return eventDay;
+	}
+
+	public void setEventDay(LocalDate eventDay) {
+		this.eventDay = eventDay;
 	}
 }
 
