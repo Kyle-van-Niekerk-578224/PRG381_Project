@@ -1,14 +1,15 @@
 package BusinessLogicLayer;
 //Event
 //LocalTime works
+//Client commented out
+//type / price removed, subclasses will implement them
+
 import java.time.Month; // <- VS Code says this is unused, but it seems to be required for ChronoUnit
 import java.time.temporal.ChronoUnit;
 import java.time.LocalDate; // import the LocalDate class, to ensure that there will be only one event per day
 
 abstract class Event{
 
-    char[] type;        //This might be easier to work with using databases than converting strings
-	float price = 5;	//value needs to be decided upon
 	Venue eventVenue;
     int people;
     LocalDate today = LocalDate.now(); //The current date
@@ -36,22 +37,7 @@ abstract class Event{
         //this will have the invoice multiply the total price by 0.5 if 15 or fewer day remain.
     }
 
-    //Getters and setters
-    public char[] getType() {
-        return type;
-    }
-
-    public void setType(char[] type) {
-        this.type = type;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
+    //Getters and setters:
 
     public Venue getEventVenue() {
         return eventVenue;
@@ -76,6 +62,12 @@ abstract class Event{
 	public void setEventDay(LocalDate eventDay) {
 		this.eventDay = eventDay;
 	}
+
+    //Constructor, eventDay is not be set here
+    public Event(Venue eventVenue, int people) {
+        this.eventVenue = eventVenue;
+        this.people = people;
+    }
 
     //Will uncomment Client getter/setter when the client class is pushed to development
 /*
