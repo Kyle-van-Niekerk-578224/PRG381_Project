@@ -39,5 +39,13 @@ public class Venue{
 	public void setVenueID(int venueID) {
 		this.venueID = venueID;
 	}
+
+	//constructor
+	public Venue(char[] name, char[] address, char[] number, int venueID) {
+		this.name = name;
+		this.address = address;
+		this.number = number;
+		this.venueID = venueID;
+	}
 	
 }
