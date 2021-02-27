@@ -4,6 +4,7 @@ public class Venue{
 	private char[] name;
 	private char[] address;
 	private char[] number;
+	int venueID;
 
 	//This class only contains getters and setters
 
@@ -29,6 +30,14 @@ public class Venue{
 
 	public void setNumber(char[] number) {
 		this.number = number;
+	}
+
+	public int getVenueID() {
+		return venueID;
+	}
+
+	public void setVenueID(int venueID) {
+		this.venueID = venueID;
 	}
 	
 }
