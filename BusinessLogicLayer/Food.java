@@ -1,12 +1,12 @@
 package BusinessLogicLayer;
 
-
 public class Food {
     
-    int noCourses; // ask for the number of courses the client wants
-    String courseDescr; // description of the cource
-    float coursePrice; // Price per course
-    float totalPrice; // Total Price
+    int noCourses; // ask for the number of food courses the client wants
+    String courseDescr; // description of the food cource
+    double coursePrice; // Price per course
+    double totalPrice; // Total Price
+    double foodDiscount = 0.15; // Discount on Adult food course is 15% if more than 40 people
 
     public int getNoCourses() {
         return noCourses;
@@ -24,20 +24,28 @@ public class Food {
         this.courseDescr = courseDescr;
     }
 
-    public float getCoursePrice() {
-        return coursePrice;
-    }
+	public double getCoursePrice() {
+		return coursePrice;
+	}
 
-    public void setCoursePrice(float coursePrice) {
-        this.coursePrice = coursePrice;
-    }
+	public void setCoursePrice(double coursePrice) {
+		this.coursePrice = coursePrice;
+	}
 
-    public float getTotalPrice() {
-        return totalPrice;
-    }
+	public double getTotalPrice() {
+		return totalPrice;
+	}
 
-    public void setTotalPrice(float totalPrice) {
-        this.totalPrice = totalPrice;
-    }
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public double getFoodDiscount() {
+		return foodDiscount;
+	}
+
+	public void setFoodDiscount(double foodDiscount) {
+		this.foodDiscount = foodDiscount;
+	}
 
 }
