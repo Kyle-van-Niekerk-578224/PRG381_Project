@@ -4,7 +4,7 @@ public class Decor {
     
     String theme;   // Theme type
     String decorRequests;   // Additional decorations requests
-    Boolean needDecor;  // Is decor needed
+    Boolean decorYN;  // Is decor needed
     double decorPrice;   // Price for decoration
 
     public String getTheme() {
@@ -24,11 +24,11 @@ public class Decor {
     }
 
     public Boolean getNeedDecor() {
-        return needDecor;
+        return decorYN;
     }
 
     public void setNeedDecor(Boolean needDecor) {
-        this.needDecor = needDecor;
+        this.decorYN = needDecor;
     }
 
     public double getDecorPrice() {

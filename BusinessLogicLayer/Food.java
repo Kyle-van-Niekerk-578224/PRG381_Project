@@ -2,42 +2,34 @@ package BusinessLogicLayer;
 
 public class Food {
     
-    int noCourses; // ask for the number of food courses the client wants
-    String courseDescr; // description of the food cource
-    double coursePrice; // Price per course
-    double totalPrice; // Total Price
-    double foodDiscount = 0.15; // Discount on Adult food course is 15% if more than 40 people
+	int mealID;	//ID of the meal type
+	String mealType;	//States whether it is adults meal, or kids meal, etc
+	String mealChoice;	//Sub devision of mealtype eg. Hamburgers and chips
+	double mealPrice;	//price of the mealChoice for 1 Person
+	double foodDiscount = 0.15;
 
-    public int getNoCourses() {
-        return noCourses;
-    }
-
-    public void setNoCourses(int noCourses) {
-        this.noCourses = noCourses;
-    }
-
-    public String getCourseDescr() {
-        return courseDescr;
-    }
-
-    public void setCourseDescr(String courseDescr) {
-        this.courseDescr = courseDescr;
-    }
-
-	public double getCoursePrice() {
-		return coursePrice;
+	public int getMealID() {
+		return mealID;
 	}
 
-	public void setCoursePrice(double coursePrice) {
-		this.coursePrice = coursePrice;
+	public void setMealID(int mealID) {
+		this.mealID = mealID;
 	}
 
-	public double getTotalPrice() {
-		return totalPrice;
+	public String getMealType() {
+		return mealType;
 	}
 
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
+	public void setMealType(String mealType) {
+		this.mealType = mealType;
+	}
+
+	public double getMealPrice() {
+		return mealPrice;
+	}
+
+	public void setMealPrice(double mealPrice) {
+		this.mealPrice = mealPrice;
 	}
 
 	public double getFoodDiscount() {
@@ -46,6 +38,14 @@ public class Food {
 
 	public void setFoodDiscount(double foodDiscount) {
 		this.foodDiscount = foodDiscount;
+	}
+
+	public String getMealChoice() {
+		return mealChoice;
+	}
+
+	public void setMealChoice(String mealChoice) {
+		this.mealChoice = mealChoice;
 	}
 
 }
