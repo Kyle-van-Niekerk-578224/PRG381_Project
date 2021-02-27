@@ -2,10 +2,10 @@ package BusinessLogicLayer;
 
 public class Decor {
     
-    String theme;
-    String decorRequests;
-    Boolean needDecor;
-    float decorPrice;
+    String theme;   // Theme type
+    String decorRequests;   // Additional decorations requests
+    Boolean needDecor;  // Is decor needed
+    float decorPrice;   // Price for decoration
 
     public String getTheme() {
         return theme;
