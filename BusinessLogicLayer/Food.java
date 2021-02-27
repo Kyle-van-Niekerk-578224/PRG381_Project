@@ -48,4 +48,12 @@ public class Food {
 		this.mealChoice = mealChoice;
 	}
 
+	public Food(int mealID, String mealType, String mealChoice, double mealPrice, double foodDiscount) {
+		this.mealID = mealID;
+		this.mealType = mealType;
+		this.mealChoice = mealChoice;
+		this.mealPrice = mealPrice;
+		this.foodDiscount = foodDiscount;
+	}
+
 }
