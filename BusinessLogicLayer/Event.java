@@ -10,7 +10,8 @@ import java.time.LocalDate; // import the LocalDate class, to ensure that there 
 
 abstract class Event{
 
-	Venue eventVenue;
+	int eventID;
+    Venue eventVenue;
     int people;
     LocalDate today = LocalDate.now(); //The current date
     LocalDate eventDay; //This is the confirmed date of the event
@@ -67,6 +68,14 @@ abstract class Event{
     public Event(Venue eventVenue, int people) {
         this.eventVenue = eventVenue;
         this.people = people;
+    }
+
+    public int getEventID() {
+        return eventID;
+    }
+
+    public void setEventID(int eventID) {
+        this.eventID = eventID;
     }
 
     //Will uncomment Client getter/setter when the client class is pushed to development

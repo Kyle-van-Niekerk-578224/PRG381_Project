@@ -16,6 +16,7 @@ public class DBConnection {
 
         try (Connection connection = DriverManager.getConnection(connectionUrl)) {
 
+            //this is where calls to the specified method for the requested statement will be made
         } catch (SQLException e) {
             e.printStackTrace();
         }
