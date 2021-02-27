@@ -1,7 +1,7 @@
 package BusinessLogicLayer;
 //Event
 //LocalTime works
-//Client commented out
+//Client re-implamented
 //type / price removed, subclasses will implement them
 
 import java.time.Month; // <- VS Code says this is unused, but it seems to be required for ChronoUnit
@@ -15,7 +15,7 @@ abstract class Event{
     int people;
     LocalDate today = LocalDate.now(); //The current date
     LocalDate eventDay; //This is the confirmed date of the event
-    //Client customer;  <-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
+    Client customer;  //<-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
 
     //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
 
@@ -79,7 +79,7 @@ abstract class Event{
     }
 
     //Will uncomment Client getter/setter when the client class is pushed to development
-/*
+
     public Client getClient() {
 		return customer;
 	}
@@ -87,7 +87,7 @@ abstract class Event{
 	public void setClient(Client customer) {
 		this.customer = customer;
 	}
-*/
+
 }
 
 
