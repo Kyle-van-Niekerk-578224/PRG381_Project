@@ -38,4 +38,11 @@ public class Decor {
     public void setDecorPrice(double decorPrice) {
         this.decorPrice = decorPrice;
     }
+
+    public Decor(String theme, String decorRequests, Boolean decorYN, double decorPrice) {
+        this.theme = theme;
+        this.decorRequests = decorRequests;
+        this.decorYN = decorYN;
+        this.decorPrice = decorPrice;
+    }
 }

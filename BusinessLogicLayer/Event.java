@@ -1,7 +1,7 @@
 package BusinessLogicLayer;
 //Event
 //LocalTime works
-//Client commented out
+//Client re-implamented
 //type / price removed, subclasses will implement them
 
 //Phase 2
