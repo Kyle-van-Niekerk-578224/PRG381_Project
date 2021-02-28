@@ -1,8 +1,13 @@
 package BusinessLogicLayer;
 //Event
 //LocalTime works
-//Client commented out
+//Client re-implamented
 //type / price removed, subclasses will implement them
+
+//Phase 2
+//TODO
+//Change char[] to String across all class and subclasses
+//Decor: add instance of the class here
 
 import java.time.Month; // <- VS Code says this is unused, but it seems to be required for ChronoUnit
 import java.time.temporal.ChronoUnit;
@@ -10,11 +15,13 @@ import java.time.LocalDate; // import the LocalDate class, to ensure that there 
 
 abstract class Event{
 
-	Venue eventVenue;
+	int eventID;
+    Venue eventVenue;
     int people;
     LocalDate today = LocalDate.now(); //The current date
     LocalDate eventDay; //This is the confirmed date of the event
-    //Client customer;  <-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
+    Client customer;  //<-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
+    Decor decorations;
 
     //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
 
@@ -69,8 +76,14 @@ abstract class Event{
         this.people = people;
     }
 
-    //Will uncomment Client getter/setter when the client class is pushed to development
-/*
+    public int getEventID() {
+        return eventID;
+    }
+
+    public void setEventID(int eventID) {
+        this.eventID = eventID;
+    }
+
     public Client getClient() {
 		return customer;
 	}
@@ -78,7 +91,23 @@ abstract class Event{
 	public void setClient(Client customer) {
 		this.customer = customer;
 	}
-*/
+
+    public Client getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Client customer) {
+        this.customer = customer;
+    }
+
+    public Decor getDecorations() {
+        return decorations;
+    }
+
+    public void setDecorations(Decor decorations) {
+        this.decorations = decorations;
+    }
+
 }
 
 
