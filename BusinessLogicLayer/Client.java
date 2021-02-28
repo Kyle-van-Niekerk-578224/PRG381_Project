@@ -1,9 +1,8 @@
 package BusinessLogicLayer;
-
 /*
- *
- * author BrandonFrade 
+* author BrandonFrade
 */
+
 //Client
 public class Client{
 	private char[] clientid;
