@@ -1,34 +1,34 @@
 package BusinessLogicLayer;
 //Venue
 public class Venue{
-	private char[] name;
-	private char[] address;
-	private char[] number;
+	private String name;
+	private String address;
+	private String number;
 	int venueID;
 
 	//This class only contains getters and setters
 
-	public char[] getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(char[] name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public char[] getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(char[] address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	public char[] getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(char[] number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
@@ -41,7 +41,7 @@ public class Venue{
 	}
 
 	//constructor
-	public Venue(char[] name, char[] address, char[] number, int venueID) {
+	public Venue(String name, String address, String number, int venueID) {
 		this.name = name;
 		this.address = address;
 		this.number = number;
