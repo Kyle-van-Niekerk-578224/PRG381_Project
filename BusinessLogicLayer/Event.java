@@ -22,8 +22,21 @@ abstract class Event{
     LocalDate eventDay; //This is the confirmed date of the event
     Client customer;  //<-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
     Decor decorations;
+    float finalPrice;
 
     //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
+
+    //method to be used in price calculation
+    public boolean isDecor(String decor) {
+        boolean tf;
+        //if (decor.isEmpty()) {
+        if (decor.equals("None")) {
+            tf = true;
+        } else {
+            tf = false;
+        }
+        return tf;
+    }
 
     public boolean checkBookingDay(){
         long days = ChronoUnit.DAYS.between(today, eventDay);
