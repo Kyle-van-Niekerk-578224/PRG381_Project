@@ -5,69 +5,50 @@ package BusinessLogicLayer;
 
 //Client
 public class Client{
-	private char[] clientid;
-	private char[] name;
-	private char[] surname;
-	private char[] phoneNumber;
-	private char[] email;
-	private char[] bankDetails;
-	private char[] address;
+	String clientid;
+	String name;
+	String surname;
+	int phoneNumber;
+	String email;
+	String address;
 
-	//This class only contains getters and setters
+	public String getClientid() {
+		return clientid;
+	}
 
-	public char[] getClient() {								// Gets the clientid
-	return clientid;
-}
+	public void setClientid(String clientid) {
+		this.clientid = clientid;
+	}
 
-	public void setClient(char[] clientid) {
-	this.clientid = clientid;
-}
-
-	public char[] getName() {								// Gets the client's name
+	public String getName() {
 		return name;
 	}
 
-	public void setName(char[] name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public char[] getSurname() {							// Gets the client's Surname
+	public String getSurname() {
 		return surname;
 	}
 
-	public void setSurname(char[] surname) {
+	public void setSurname(String surname) {
 		this.surname = surname;
 	}
 
-	public char[] getNumber() {								// Gets the client's Phone Number
+	public int getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setNumber(char[] phoneNumber) {
+	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public char[] getEmail() {								// Gets the client's Email address
-		return email;
-	}
-
-	public void setEmail(char[] email) {
-		this.email = email;
-	}
-
-	public char[] getBank() {								// Gets the client's Bank Details
-		return bankDetails;
-	}
-
-	public void setBank(char[] bankDetails) {
-		this.bankDetails = bankDetails;
-	}
-
-	public char[] getAddress() {							// Gets the client's Physical Address
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(char[] address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 }
