@@ -1,61 +1,94 @@
 package BusinessLogicLayer;
 
-/*
-* author BrandonFrade
-*/
+import java.util.LinkedList;
+import java.util.*; 
 
-public class Bookings {
+public class Bookings extends Event {
 
-    public Client getClient() {
-		return clientid;
-	}
-	public void setClient(Client clientid) {
-		this.clientid = clientid;
-	}
+    private String BookingID;
+    private String type; // Event type  
+    private float price; // Price for the specific event type in addition to venue costs
+    private List<Food> foodList = new LinkedList<Food>(); //List of food, will function as normal List<>
+    Boolean Decor = false;
+    Boolean Confirmed = false; // to confirm an event date, may be done in database 
+    //Event day must be set elswere (Or in database) when confirming the event
 
-	localDate eventDay;										//calls the confirmed date of the event
-	char type;												//Type of event taking place
-	int people;												//How many people will be attending
-	Decor Decor = new Decor();
-	Venue Venue = new Venue();
-	Event Event = new Event(Venue,eventDay, people);
+    public Bookings(Venue eventVenue, int people, float price, String type) {
+        super(eventVenue, people);
+        this.price = price;
+        this.type = type;
+    }
 
-    public Event getEvent() {
-		return eventid;
-	}
-	public void setEvent(Event Eventid) {
-		this.eventid = eventid;
-	}
+    //Calculates, sets and returns the total Price
+    public float calculatePrice(){
+        this.finalPrice = this.basePrice + this.price; //Venue price + Event Price
+        int i = 0;
+        float foodPrice = 0;
+        while(i< foodList.size())
+        {
+            foodPrice += foodList.get(i).getMealPrice();
+        }
+        this.finalPrice += foodPrice;
 
-	char mealType								//The Meal type of the foods such as how many adultmeals, kidsmeals, etc.
-	Decor Decor = new Decor();
-	Food Food = new Food(Decor,mealType);
+        if (Decor)
+        {
+            this.finalPrice = finalPrice +500; //set testing price for decorations
+            this.finalPrice = (float) (finalPrice - 500 + this.decorations.getDecorPrice()); //will use this if decor class is kept
+        }
 
-    public Food getFood() {
-		return mealID;
-	}
-	public void setFood(Food mealID) {
-		this.mealID = mealID;
-	}
+        if (checkPeople(people))
+        {
+            this.finalPrice = (float) (finalPrice * 0.85); // 15% discount if 40+ people
+        }
 
-	char address											//Venue's address
-	Venue Venue = new Venue(Venue,address);
+        return this.finalPrice;
+    }
 
-    public Venue getVenue() {
-		return venueid;
-	}
-	public void setVenue(Venue venueid) {
-		this.venueid = venueid;
-	}
+    public String getType() {
+        return type;
+    }
 
-	char decorRequests, decorYN, decorPrice										//Decor type, if its needed and the price 
-	Event Event = new Event();
-	Decor Decor = new Decor(Event, decorRequests, decornYN, decorPrice);
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    public Decor getDecor() {
-		return theme;
-	}
-	public void setDecor(Decor theme) {
-		this.theme = theme;
-	}
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public List<Food> getFoodList() {
+        return foodList;
+    }
+
+    public void setFoodList(List<Food> foodList) {
+        this.foodList = foodList;
+    }
+
+    public Boolean getDecor() {
+        return Decor;
+    }
+
+    public void setDecor(Boolean decor) {
+        Decor = decor;
+    }
+
+    public String getBookingID() {
+        return BookingID;
+    }
+
+    public void setBookingID(String bookingID) {
+        BookingID = bookingID;
+    }
+
+    public Boolean getConfirmed() {
+        return Confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        Confirmed = confirmed;
+    }
 }
