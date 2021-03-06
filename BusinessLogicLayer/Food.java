@@ -1,6 +1,8 @@
 package BusinessLogicLayer;
 
-public class Food {
+import java.io.Serializable;
+
+public class Food implements Serializable {
     
 	int mealID;	//ID of the meal type
 	String mealType;	//States whether it is adults meal, or kids meal, etc

@@ -1,6 +1,8 @@
 package BusinessLogicLayer;
 
-public class Decor {
+import java.io.Serializable;
+
+public class Decor implements Serializable {
     
     String theme;   // Theme type
     String decorRequests;   // Additional decorations requests

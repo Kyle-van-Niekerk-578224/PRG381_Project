@@ -1,6 +1,9 @@
 package BusinessLogicLayer;
+
+import java.io.Serializable;
+
 //Venue
-public class Venue{
+public class Venue implements Serializable{
 	private String name;
 	private String address;
 	private String number;
