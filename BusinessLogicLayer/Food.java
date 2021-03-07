@@ -8,7 +8,6 @@ public class Food implements Serializable {
 	String mealType;	//States whether it is adults meal, or kids meal, etc
 	String mealChoice;	//Sub devision of mealtype eg. Hamburgers and chips
 	double mealPrice;	//price of the mealChoice for 1 Person
-	double foodDiscount = 0.15;
 
 	public int getMealID() {
 		return mealID;
@@ -34,14 +33,6 @@ public class Food implements Serializable {
 		this.mealPrice = mealPrice;
 	}
 
-	public double getFoodDiscount() {
-		return foodDiscount;
-	}
-
-	public void setFoodDiscount(double foodDiscount) {
-		this.foodDiscount = foodDiscount;
-	}
-
 	public String getMealChoice() {
 		return mealChoice;
 	}
@@ -50,12 +41,11 @@ public class Food implements Serializable {
 		this.mealChoice = mealChoice;
 	}
 
-	public Food(int mealID, String mealType, String mealChoice, double mealPrice, double foodDiscount) {
+	public Food(int mealID, String mealType, String mealChoice, double mealPrice) {
 		this.mealID = mealID;
 		this.mealType = mealType;
 		this.mealChoice = mealChoice;
 		this.mealPrice = mealPrice;
-		this.foodDiscount = foodDiscount;
 	}
 
 }
