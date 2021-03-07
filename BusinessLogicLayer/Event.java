@@ -11,10 +11,10 @@ package BusinessLogicLayer;
 
 import java.time.Month; // <- VS Code says this is unused, but it seems to be required for ChronoUnit
 import java.time.temporal.ChronoUnit;
+import java.io.Serializable;
 import java.time.LocalDate; // import the LocalDate class, to ensure that there will be only one event per day
 
-abstract class Event{
-
+abstract class Event implements Serializable{
 	int eventID;
     Venue eventVenue;
     int people;
@@ -22,6 +22,7 @@ abstract class Event{
     LocalDate eventDay; //This is the confirmed date of the event
     Client customer;  //<-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
     Decor decorations;
+    float basePrice = 1500;
     float finalPrice;
 
     //LocalDate testDate = LocalDate.of(2017, Month.MAY, 24);
@@ -57,6 +58,12 @@ abstract class Event{
         //this will have the invoice multiply the total price by 0.5 if 15 or fewer day remain.
     }
 
+       //Constructor, eventDay is not be set here
+    public Event(Venue eventVenue, int people) {
+    this.eventVenue = eventVenue;
+    this.people = people;
+    } 
+
     //Getters and setters:
 
     public Venue getEventVenue() {
@@ -82,12 +89,6 @@ abstract class Event{
 	public void setEventDay(LocalDate eventDay) {
 		this.eventDay = eventDay;
 	}
-
-    //Constructor, eventDay is not be set here
-    public Event(Venue eventVenue, int people) {
-        this.eventVenue = eventVenue;
-        this.people = people;
-    }
 
     public int getEventID() {
         return eventID;
@@ -119,6 +120,22 @@ abstract class Event{
 
     public void setDecorations(Decor decorations) {
         this.decorations = decorations;
+    }
+
+    public float getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(float basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public float getFinalPrice() {
+        return finalPrice;
+    }
+
+    public void setFinalPrice(float finalPrice) {
+        this.finalPrice = finalPrice;
     }
 
 }
