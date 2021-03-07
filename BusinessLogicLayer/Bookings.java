@@ -59,8 +59,6 @@ public class Bookings extends Event {
         {
             this.finalPrice = (float) (finalPrice - adultFoodPrice * 0.15); // 15% discount if 40+ people
         }
-    
-
 
         if (Decor)
         {

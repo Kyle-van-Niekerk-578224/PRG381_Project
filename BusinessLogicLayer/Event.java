@@ -21,6 +21,7 @@ abstract class Event implements Serializable{
     int people;
     LocalDate today = LocalDate.now(); //The current date
     LocalDate eventDay; //This is the confirmed date of the event
+    String date;// string to be used in database
     Client customer;  //<-  Placeholder, client class does not exist yet, will uncomment this and getter/setter once it does
     Decor decorations;
     float basePrice = 1500;
@@ -89,6 +90,7 @@ abstract class Event implements Serializable{
 
 	public void setEventDay(LocalDate eventDay) {
 		this.eventDay = eventDay;
+        date = eventDay.toString();
 	}
 
     public int getEventID() {
