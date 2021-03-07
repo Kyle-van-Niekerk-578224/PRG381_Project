@@ -9,6 +9,10 @@ public class Bookings extends Event {
     private String type; // Event type  
     private float price; // Price for the specific event type in addition to venue costs
     private List<Food> foodList = new LinkedList<Food>(); //List of food, will function as normal List<>
+    int adultMeals = 0;
+    int kidsMeals =0;
+    int drinks =0;
+    int desserts =0;
     Boolean Decor = false;
     Boolean Confirmed = false; // to confirm an event date, may be done in database 
     //Event day must be set elswere (Or in database) when confirming the event
@@ -24,21 +28,44 @@ public class Bookings extends Event {
         this.finalPrice = this.basePrice + this.price; //Venue price + Event Price
         int i = 0;
         float foodPrice = 0;
+        float adultFoodPrice = 0;
+
         while(i< foodList.size())
         {
             foodPrice += foodList.get(i).getMealPrice();
+            if (foodList.get(i).getMealType().equalsIgnoreCase("Adult"))
+            {
+                adultMeals ++;
+                adultFoodPrice += foodList.get(i).getMealPrice();
+            }
+
+            if (foodList.get(i).getMealType().equalsIgnoreCase("Kids"))
+            {
+                kidsMeals ++;
+            }
+
+            if (foodList.get(i).getMealType().equalsIgnoreCase("Drinks"))
+            {
+                drinks ++;
+            }
+
+            if (foodList.get(i).getMealType().equalsIgnoreCase("Desset"))
+            {
+                desserts ++;
+            }
         }
         this.finalPrice += foodPrice;
+        if (checkPeople(people))
+        {
+            this.finalPrice = (float) (finalPrice - adultFoodPrice * 0.15); // 15% discount if 40+ people
+        }
+    
+
 
         if (Decor)
         {
             this.finalPrice = finalPrice +500; //set testing price for decorations
             this.finalPrice = (float) (finalPrice - 500 + this.decorations.getDecorPrice()); //will use this if decor class is kept
-        }
-
-        if (checkPeople(people))
-        {
-            this.finalPrice = (float) (finalPrice * 0.85); // 15% discount if 40+ people
         }
 
         return this.finalPrice;
@@ -59,7 +86,7 @@ public class Bookings extends Event {
     public void setPrice(float price) {
         this.price = price;
     }
-
+/*
     public List<Food> getFoodList() {
         return foodList;
     }
@@ -67,7 +94,7 @@ public class Bookings extends Event {
     public void setFoodList(List<Food> foodList) {
         this.foodList = foodList;
     }
-
+*/
     public Boolean getDecor() {
         return Decor;
     }
