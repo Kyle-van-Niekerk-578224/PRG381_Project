@@ -141,6 +141,22 @@ abstract class Event implements Serializable{
         this.finalPrice = finalPrice;
     }
 
+    public int getMenuID() {
+        return menuID;
+    }
+
+    public void setMenuID(int menuID) {
+        this.menuID = menuID;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 }
 
 
