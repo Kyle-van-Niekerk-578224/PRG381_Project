@@ -116,4 +116,11 @@ public class Bookings extends Event {
     public void setConfirmed(Boolean confirmed) {
         Confirmed = confirmed;
     }
+
+    public Bookings(String bookingID, String type, float price) {
+        super();
+        BookingID = bookingID;
+        this.type = type;
+        this.price = price;
+    }
 }
