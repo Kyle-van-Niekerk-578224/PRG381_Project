@@ -117,9 +117,8 @@ public class Bookings extends Event {
         Confirmed = confirmed;
     }
 
-    public Bookings(String bookingID, String type, float price) {
+    public Bookings(String type, float price) {
         super();
-        BookingID = bookingID;
         this.type = type;
         this.price = price;
     }

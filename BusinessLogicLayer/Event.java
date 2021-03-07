@@ -157,6 +157,9 @@ abstract class Event implements Serializable{
         this.date = date;
     }
 
+    public Event() {
+    }
+
 }
 
 
