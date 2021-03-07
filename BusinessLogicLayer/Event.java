@@ -16,6 +16,7 @@ import java.time.LocalDate; // import the LocalDate class, to ensure that there 
 
 abstract class Event implements Serializable{
 	int eventID;
+    int menuID;
     Venue eventVenue;
     int people;
     LocalDate today = LocalDate.now(); //The current date
